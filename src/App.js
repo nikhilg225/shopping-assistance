@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+import { ClickImage } from './frontend/components/ClickImage'
+import Home from './frontend/components/Home'
+import './frontend/styles/styles.scss'
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <div>
+    <Switch>
+    <Route path="/" exact={true} >
+      <Home/>
+    </Route>
+    <Route path="/click-image">
+          <ClickImage />
+        </Route>
+    </Switch>
+
+  </div>
+  
+  )
 }
 
-export default App;
+
+
+export default App
